@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    padding: 2rem;
+}
+@layer components {
+    .icon {
+      @apply text-teal-950 hover:text-teal-900 w-5 h-5;
+    };
+    .formInput{
+        @apply form-input text-teal-950 rounded-md border-teal-700 focus:border-none focus:ring-teal-400 shadow-sm focus:shadow-lg shadow-teal-500;
+    }
+    .submitButton{
+      @apply bg-teal-300 p-2 rounded-md shadow-md shadow-teal-900 cursor-pointer hover:bg-teal-200 mt-10
+    }
+  }
