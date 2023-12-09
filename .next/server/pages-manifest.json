@@ -1,0 +1,19 @@
+{
+  "/_app": "pages/_app.js",
+  "/api/addPost": "pages/api/addPost.js",
+  "/api/hello": "pages/api/hello.js",
+  "/api/todos/staticTodos": "pages/api/todos/staticTodos.js",
+  "/api/todos/dynamicTodos/[dynamicTodos]": "pages/api/todos/dynamicTodos/[dynamicTodos].js",
+  "/api/users": "pages/api/users.js",
+  "/api/users/login": "pages/api/users/login.js",
+  "/api/users/register": "pages/api/users/register.js",
+  "/_error": "pages/_error.js",
+  "/todos/[edit]": "pages/todos/[edit].js",
+  "/todos/create": "pages/todos/create.js",
+  "/users/login": "pages/users/login.js",
+  "/users/register": "pages/users/register.js",
+  "/todos": "pages/todos.js",
+  "/": "pages/index.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
