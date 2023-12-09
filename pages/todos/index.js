@@ -126,7 +126,7 @@ const user=await User.findOne({mobile})
        const _id=user._id;
        const findedUserr=await User.find({_id})
        const name=findedUserr[0].name
-       console.log(name)
+       console.log({name})
        const todos=await Todo.find({userID:_id});
       const userTodos= JSON.stringify(todos)
 

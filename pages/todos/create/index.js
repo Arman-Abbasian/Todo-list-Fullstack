@@ -13,7 +13,6 @@ import FormikComponent from "../../../components/FormikComponent";
 const CraeteTodo = ({findedUser}) => {
     const user=JSON.parse(findedUser);
     const id=user._id;
-    console.log(id)
     const [formErrors,setFormErrors]=useState([])
     const [dbError,setDbError]=useState("")
       const formik = useFormik({
@@ -23,15 +22,14 @@ const CraeteTodo = ({findedUser}) => {
           },
           validateOnMount:true,
           onSubmit: function (values,{resetForm}) {
-            console.log(values)
             axios.post ('/api/todos/staticTodos',{...values,id})
             .then(res=>{
               toast.success(res.data.message)
               resetForm({values:''})
             })
             .catch(err=>{
-              setFormErrors(err.response?.data?.error?.returnedErrors || []);
-              setDbError(err.response?.data?.message || [])
+              setFormErrors(err?.response?.data?.error?.returnedErrors || []);
+              setDbError(err?.response?.data?.message || [])
             })
           },
           validationSchema: Yup.object({

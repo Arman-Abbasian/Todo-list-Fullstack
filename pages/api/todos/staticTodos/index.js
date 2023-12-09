@@ -16,22 +16,25 @@ export default async function handler(req, res) {
       } catch (error) {
         res.status(400).json({ success: false,message:error.message })
       }
-
+      break;
       case 'POST':
       try {
         const {todoName,todoDate,id}=req.body
         const userID=new ObjectId(id);
         const newTodo={todoName,todoDate,userID}
         const conc=await Todo.create(newTodo)
-        if(!conc) res.status(500).json({ success: false,message:"server error" })
-        res.status(200).json({ success: true, message: "todo created successfully" })
+        if(!conc){
+          res.status(500).json({ success: false,message:"server error" })
+        }else{
+          res.status(200).json({ success: true, message: "todo created successfully" })
+        }
       } catch (error) {
-        console.log(error.message)
         res.status(400).json({ success: false,message:error.message })
       }
-
-    default:
+      break;
+      default:
       res.status(400).json({ success: false,message:"error" })
-      break
+      break;
+    
   }
 }
