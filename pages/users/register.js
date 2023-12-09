@@ -2,7 +2,6 @@ import axios from "axios";
 import { useFormik } from "formik";
 import { useState } from "react";
 import * as Yup from 'yup';
-import ShowErrorsForm from "../../components/showErrorsForm";
 import { useRouter } from "next/router";
 import FormikComponent from "../../components/FormikComponent";
 import Link from "next/link";
@@ -11,6 +10,7 @@ import User from '../../models/user.model.js';
 import dbConnect from "../../lib/mongodb";
 import { getCookie } from "cookies-next";
 import  jwt  from 'jsonwebtoken'
+import ShowErrorsForm from "../../components/showErrorsForm.jsx";
 
 export default function Register() {
   const {push}=useRouter();
