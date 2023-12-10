@@ -58,7 +58,9 @@ console.log(formik.isValid)
         <div className="flex flex-col gap-2 mb-8">
             {formErrors && formErrors.map((item,index)=>{
               // return <ShowErrorsForm key={index} message={item} />
-              return <p key={index}>some error ...</p>
+              return <div key={index} className="text-red-700 flex gap-2">
+              <p>{item}</p>
+            </div>
             })}
         </div>
         <FormikComponent label={"Full Name"} name={"name"}formik={formik}  />
