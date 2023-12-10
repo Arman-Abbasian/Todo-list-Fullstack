@@ -10,7 +10,7 @@ import User from '../../models/user.model.js';
 import dbConnect from "../../lib/mongodb";
 import { getCookie } from "cookies-next";
 import  jwt  from 'jsonwebtoken'
-import ShowErrorsForm from "../../components/showErrorsForm.jsx";
+//import ShowErrorsForm from "../../components/showErrorsForm.jsx";
 
 export default function Register() {
   const {push}=useRouter();
@@ -57,7 +57,8 @@ console.log(formik.isValid)
         <h1 className='text-3xl mb-3 text-center text-teal-800 mt-10'>Register</h1>
         <div className="flex flex-col gap-2 mb-8">
             {formErrors && formErrors.map((item,index)=>{
-              return <ShowErrorsForm key={index} message={item} />
+              // return <ShowErrorsForm key={index} message={item} />
+              return <p key={index}>some error ...</p>
             })}
         </div>
         <FormikComponent label={"Full Name"} name={"name"}formik={formik}  />
